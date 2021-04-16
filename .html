@@ -1,0 +1,56 @@
+<script>
+  var par = [];
+  var impar = [];
+  //funcao Random
+  function Megasena(min, max){return Math.random()*(max-min)+min}
+  var limite = {
+    l1: 1,
+    l2: 2,
+    l3: 3,
+    l4: 4,
+    l5: 5
+  }
+  do {
+    var x1 = parseInt(prompt('digite a quantidade de pares  *limite e ate 5*'));
+  } while (x1 > 5);
+  if (x1 == 1) {limiteEscolhido = limite.l5}
+  if (x1 == 2) {limiteEscolhido = limite.l4}
+  if (x1 == 3) {limiteEscolhido = limite.l3}
+  if (x1 == 4) {limiteEscolhido = limite.l2}
+  if (x1 == 5) {limiteEscolhido = limite.l1}
+  var x2 = limiteEscolhido
+  //numeros par
+  do {
+    var numero = Math.round(Megasena(1, 9));
+    //verificação
+    for (numero; numero === par[0]; numero = Math.round(Megasena(1, 60))) {}
+    for (numero; numero === par[1]; numero = Math.round(Megasena(1, 60))) {}
+    for (numero; numero === par[2]; numero = Math.round(Megasena(1, 60))) {}
+    for (numero; numero === par[3]; numero = Math.round(Megasena(1, 60))) {}
+    for (numero; numero === par[4]; numero = Math.round(Megasena(1, 60))) {}
+    var verificacao = numero % 2;
+    if (verificacao == 0) { verificacao = par; }
+    if (verificacao == 1) { verificacao = impar; }
+    //distribiução
+    if (verificacao == par) { par.push(numero) };
+  } while (par.length < x1);
+  //numeros impar
+  do {
+    var numero1 = Math.round(Megasena(1, 60));
+    //verificação
+    for (numero1; numero1 === impar[0]; numero1 = Math.round(Megasena(1, 60))) {}
+    for (numero1; numero1 === impar[1]; numero1 = Math.round(Megasena(1, 60))) {}
+    for (numero1; numero1 === impar[2]; numero1 = Math.round(Megasena(1, 60))) {}
+    for (numero1; numero1 === impar[3]; numero1 = Math.round(Megasena(1, 60))) {}
+    for (numero1; numero1 === impar[4]; numero1 = Math.round(Megasena(1, 60))) {}
+    var verificacao1 = numero1 % 2;
+    if (verificacao1 == 0) { verificacao1 = par; }
+    if (verificacao1 == 1) { verificacao1 = impar; }
+    //distribiução
+    if (verificacao1 == impar) { impar.push(numero1) };
+  } while (impar.length < x2);
+  //print na tela
+  console.log(par, impar)
+  document.write('seus numeros da sorte sao = ' + impar + ',' + par);
+  console.log('seus numeros da sorte sao = ' + impar + ',' + par);
+</script>
